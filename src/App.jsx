@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import Carousel from "./components/carousel";
 import Collections from "./components/collections";
 import Products from "./components/products";
+import Footer from "./components/footer";
 function App() {
   return (
     <div className="font-BeVietnam">
@@ -10,6 +11,7 @@ function App() {
       <Carousel />
       <Collections />
       <Products />
+      <Footer />
     </div>
   );
 }

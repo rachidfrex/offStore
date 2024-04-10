@@ -1,9 +1,9 @@
 import React from "react";
 import product1 from "../assets/images/products/product1.jpg";
-import product2 from "../assets/images/products/product2.jpg";
+import product2 from "../assets/images/products/product2.png";
 import product3 from "../assets/images/products/product3.jpg";
-import product4 from "../assets/images/products/product4.jpg";
-import product5 from "../assets/images/products/product5.jpg";
+import product4 from "../assets/images/products/product4.png";
+import product5 from "../assets/images/products/product5.png";
 import product6 from "../assets/images/products/product6.jpg";
 import product7 from "../assets/images/products/product7.jpg";
 import product8 from "../assets/images/products/product8.jpg";
@@ -88,7 +88,7 @@ function Products() {
             <div key={product.id} className="relative shadow-lg rounded-lg">
               <div className="p-3  ">
                 <img
-                  className="object-cover rounded-md  aspect-[9/11] w-full  "
+                  className="object-cover rounded-md  aspect-[9/11] w-full bg-black/30  "
                   src={product.image}
                   alt={product.name}
                 />

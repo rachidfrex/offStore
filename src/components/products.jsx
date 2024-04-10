@@ -85,7 +85,7 @@ function Products() {
       <div>
         <div className="grid grid-cols-5 gap-4  ">
           {products.map((product) => (
-            <div key={product.id} className="relative shadow-lg rounded-lg">
+            <div key={product.id} className="relative shadow-sm rounded-lg bg-white">
               <div className="p-3  ">
                 <img
                   className="object-cover rounded-md  aspect-[9/11] w-full bg-black/30  "
@@ -110,9 +110,18 @@ function Products() {
                 <ShoppingCart  size={27} />
               </div>
             </div>
+
           ))}
+        
         </div>
       </div>
+      <div className="flex justify-center w-full">
+         <button
+          className="bg-black text-white p-2 rounded-lg mt-10 px-10 border-2 hover:bg-white hover:border-2 hover:border-black hover:text-black transition duration-300 ease-in-out"
+          >
+            Browse all
+          </button>
+         </div> 
     </div>
   );
 }

@@ -11,3 +11,14 @@
 .fade-in {
   animation: fadeIn 1s;
 }
+.card-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 50%;
+}
+.card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 20%; /* Adjust as needed */
+}

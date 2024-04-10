@@ -8,6 +8,8 @@ import { MoveDownRight } from 'lucide-react';
 import { MoveUpRight } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
 import { ChevronRight } from 'lucide-react';
+import gsap from "gsap";
+import { useRef ,useLayoutEffect } from "react";
 function Carousel() {
     // help me make a slider image wiche it will change the image "banner" every 5 seconds or when the user click on the right or left button
     // it should swich bettwen the images banner1, banner2, banner3
@@ -33,9 +35,24 @@ function Carousel() {
         return () => clearInterval(interval);
       }, [index]);
 
+      const comp = useRef(null);
+      useLayoutEffect(() => {
+        let ctx = gsap.context(()=>{
+          const tl = gsap.timeline();
+          tl.from("#title-banner", {
+            opacity: 0,
+             }).to("#title-banner", {
+            x: -100,
+            duration: 0.5,
+            opacity: 1,
+            ease:"power1"
+          })
+          })
+        
+      }, []);
     
   return (
-    <div className=" w-full relative px-20  overflow-hidden  rounded-lg mt-10">
+    <div className=" w-full relative px-20  overflow-hidden  rounded-lg mt-10  " ref={comp}>
       <div className="fade-in" key={index}>
         <img
           src={banners[index]}
@@ -46,9 +63,10 @@ function Carousel() {
       <div>
         <div className="absolute top-20 translate-x-10 transform  text-start">
          <div
+         id="title-banner"
          className="bg-black p-5 rounded-lg flex items-end gap-5 w-7/12"
          >
-         <h1 className="text-7xl font-semibold text-white leading-tight ">
+         <h1 id="title" className="text-7xl font-semibold text-white leading-tight  ">
             we are degital <br /> meets fashions  
             
           </h1>
